@@ -1,0 +1,229 @@
+.header {
+    position: relative;
+    
+    &__top {
+        height: 124px;
+        background: #201F1A;
+
+        &-mob {
+            display: none;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translate(-50%,0);
+        font-family: Adamina;
+        font-size: 96px;
+        font-weight: 400;
+        line-height: 96px;
+        color: #FFF;
+    
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -16px;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 64px;
+
+        &--link {
+            font-family: Adamina;
+            font-size: 16px;
+            font-weight: 400;
+            color: #FFF;
+
+            &:hover {
+                color: #ed774e;
+                transition: 0.4s;
+            }
+        }
+
+        &--item {
+            position: relative;
+            font-family: Adamina;
+            font-size: 16px;
+            font-weight: 400;
+            color: #FFF;
+            z-index: 5;
+        }
+
+        &--block {
+            display: flex;
+            gap: 20px;
+            margin-top: 17px;
+        }
+    }
+
+    &__search {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -26px;
+            width: 22px;
+            height: 22px;
+            background-image: url(../images/search.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+    }
+
+    &__bot {
+        width: 100%;
+        height: 320px;
+        background-image: url(../images/header-bg.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    
+    &__link {
+        position: relative;
+        font-family: Adamina;
+        font-size: 96px;
+        font-weight: 400;
+        line-height: 96px;
+        color: #FFF;
+        z-index: 5;
+
+        &::after {
+            content: 'Newswire';
+            position: absolute;
+            top: -21px;
+            left: 36px;
+            opacity: 0.25;
+            text-shadow: 1px 0 1px #fff, 0 1px 1px #fff, -1px 0 1px #fff, 0 -1px 1px #fff;
+            color: #201F1A;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        &:hover {
+            filter: drop-shadow(2px 4px 6px black);
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1200px) {
+    .header {
+        &__title {
+            font-size: 75px;
+            line-height: 75px;
+        }
+        
+        &__menu {
+            &--item {
+                font-size: 14px;
+            }
+
+            &--block {
+                gap: 12px;
+            }
+
+            &--link {
+                font-size: 12px;
+            }
+        }
+
+        &__search {
+            &::before {
+                left: -22px;
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        &__bot {
+            height: 300px;
+        }
+    }
+
+    .logo {
+        &__link {
+            font-size: 70px;
+
+            &::after {
+                top: -32px;
+                left: 14px;
+            }
+        }
+    }
+}
+
+@media(min-width: 365px) and (max-width: 768px) {
+    .header {
+        &__title {
+            font-size: 50px;
+            line-height: 50px;
+        }
+
+        &__top {
+            display: none;
+
+            &-mob {
+                display: block;
+                height: 124px;
+                background: #201F1A;
+            }
+        }
+
+        &__menu {
+            padding-top: 70px;
+            
+            &--item {
+                font-size: 14px;
+            }
+
+            &--block {
+                gap: 12px;
+                margin: 0;
+            }
+
+            &--link {
+                font-size: 12px;
+            }
+        }
+
+        &__search {
+            &::before {
+                width: 0;
+                height: 0;
+            }
+        }
+
+        &__bot {
+            height: 210px;
+        }
+    }
+
+    .logo {
+        &__link {
+            font-size: 38px;
+
+            &::after {
+                top: -32px;
+                left: 12px;
+            }
+        }
+    }
+}
